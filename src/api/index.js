@@ -104,6 +104,14 @@ export const reqRoles = () => ajax('/manage/role/list')
 // 更新角色 ( 给角色设置权限 )
 export const reqUpdateRole = (role) => ajax.post('/manage/role/update', role)
 
+// 添加 / 更新用户
+export const reqAddOrUpdateUser = (user) => ajax.post('/manage/user/'+(user._id ? 'update' :
+'add'), user)
+// 获取用户列表
+export const reqUsers = () => ajax('/manage/user/list')
+// 删除用户
+export const reqDeleteUser = (userId) => ajax.post('/manage/user/delete', {userId})
+
 
 //jsonp请求
 export const reqWeather = (city) => {

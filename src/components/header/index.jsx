@@ -61,6 +61,9 @@ import weatherimg from '../../assets/images//weather.jpeg'
         //发请求jsonp获取天气温度信息
         this.getWeather()
     }
+    componentWillUnmount(){
+        clearInterval(this.timerId)
+    }
     
     UNSAFE_componentWillMount(){
         this.title=this.props.location.query || '首页';
